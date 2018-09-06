@@ -327,7 +327,7 @@ LOCAL_SHARED_LIBRARIES := \
         liblog \
         libcutils \
         libtinyalsa \
-        libtinycompress_vendor \
+	libtinycompress \
         libaudioroute \
         libdl \
         libaudioutils \
@@ -340,16 +340,11 @@ LOCAL_SHARED_LIBRARIES := \
 	libcutils \
 	libhardware \
 	libtinyalsa \
+	libtinycompress \
 	libaudioroute \
 	libdl \
 	libaudioutils \
 	libexpat
-endif
-
-ifneq ($(strip $(TARGET_USES_AOSP_FOR_AUDIO)),true)
-    LOCAL_SHARED_LIBRARIES += libtinycompress_vendor
-else
-    LOCAL_SHARED_LIBRARIES += libtinycompress
 endif
 
 LOCAL_C_INCLUDES += \
